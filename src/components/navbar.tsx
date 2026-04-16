@@ -1,3 +1,5 @@
+"use client";
+
 import { Dock, DockIcon } from "@/components/magicui/dock";
 import { ModeToggle } from "@/components/mode-toggle";
 import { buttonVariants } from "@/components/ui/button";
@@ -43,15 +45,17 @@ export default function Navbar() {
             <DockIcon key={name}>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Link
+                  <a
                     href={social.url}
+                    target="_blank"
+                    rel="noreferrer"
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
                       "size-12"
                     )}
                   >
                     <social.icon className="size-4" />
-                  </Link>
+                  </a>
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>{name}</p>
